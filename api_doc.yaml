@@ -69,6 +69,1260 @@ paths:
           description: password incorrect
           schema:
             "$ref": "#/definitions/candidateLogin400"
+
+
+  "/flippedlogin.py/1":
+    post:
+      tags:
+      - Candidate
+      summary: Candidate SignUp
+      description: SignUp via email and password
+      operationId: CandidateSignUp
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: formData
+        description: "loginNow"
+        required: true
+        type: string
+      - name: First name
+        in: formData
+        description: first name of the Candidate
+        required: true
+        type: string
+      - name: last name
+        in: formData
+        description: Last name of the Candidate
+        required: true
+        type: string  
+      - name: email
+        in: formData
+        description: email of the Recruiter
+        required: true
+        type: string   
+      - name: phone
+        in: formData
+        description: phone of the candidate
+        required: true
+        type: string
+      - name: Choose your CV
+        in: formData
+        description: Cv of the candidate
+        required: true
+        type: file        
+     
+          
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"
+        '400':
+          description: password incorrect
+          schema:
+            "$ref": "#/definitions/candidateLogin400"
+
+  "flippedLogin.py":
+    post:
+      tags:
+      - Candidate
+      summary: Candidate Jobs
+      description: Get initial Jobs
+      operationId: CandidateJobs
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: formData
+        description: "jdlistAll"
+        required: true
+        type: string
+      - name: User ID
+        in: formData
+        description: User Id of the candidate
+        required: true
+        type: string
+      - name: condition
+        in: formData
+        description: init
+        required: true
+        type: string  
+          
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200" 
+
+  "/flippedLogin.py/2":
+    post:
+      tags:
+      - Candidate
+      summary: Candidate more Jobs
+      description: Get more Jobs
+      operationId: CandidatemoreJobs
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: formData
+        description: "jdlistAll"
+        required: true
+        type: string
+      - name: User ID
+        in: formData
+        description: User Id of the candidate
+        required: true
+        type: string
+      - name: condition
+        in: formData
+        description: init
+        required: true
+        type: string  
+          
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200" 
+
+  "flippedNewSignup.py":
+    post:
+      tags:
+      - Candidate
+      summary: Candidate Filter Jobs
+      description: Get more Jobs
+      operationId: CandidatemoreJobs
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: formData
+        description: "filterjdlistAll"
+        required: true
+        type: string
+      - name: filter
+        in: formData
+        description: filter by category
+        required: true
+        type: string
+      - name: condition
+        in: formData
+        description: init
+        required: true
+        type: string  
+          
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200" 
+
+  "flippedCandidate.py":
+    post:
+      tags:
+      - Candidate
+      summary: Candidate Applied Jobs
+      description: Get Applied Jobs
+      operationId: CandidateappliedJobs
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: formData
+        description: "getUpskillStatus"
+        required: true
+        type: string
+      - name: userID
+        in: formData
+        description: Candidate userID
+        required: true
+        type: string 
+          
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"
+
+  "/listCourses.py":
+    post:
+      tags:
+      - Candidate
+      summary: Candidate upskilling Courses
+      description: Get Upskilling Courses
+      operationId: CandidateupskiilingCourses
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: myown
+        in: formData
+        description: "1"
+        required: true
+        type: string
+      - name: userID
+        in: formData
+        description: Candidate userID
+        required: true
+        type: string 
+          
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"
+
+  "/listCourses.py/CourselistnyName":
+    post:
+      tags:
+      - Candidate
+      summary: Candidate upskilling Courses By Name
+      description: Get Upskilling Courses By Name
+      operationId: CandidateupskiilingCoursesbyName
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: myown
+        in: formData
+        description: "1"
+        required: true
+        type: string
+      - name: userID
+        in: formData
+        description: Candidate userID
+        required: true
+        type: string
+      - name: Id
+        in: formData
+        description: Last ID of the candidate
+        required: true
+        type: string   
+          
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200" 
+
+
+  "/listCourses.py/courselistnyPrice":
+    post:
+      tags:
+      - Candidate
+      summary: Candidate upskilling Courses according to price
+      description: Get Upskilling Courses according to price
+      operationId: CandidateupskiilingCoursesaccordingtoprice
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: myown
+        in: formData
+        description: "1"
+        required: true
+        type: string
+      - name: userID
+        in: formData
+        description: Candidate userID
+        required: true
+        type: string
+      - name: Id
+        in: formData
+        description: Last ID of the candidate
+        required: true
+        type: string   
+      - name: sortByPrice
+        in: formData
+        description: Sort course by price
+        required: true
+        type: string 
+      - name: sortType
+        in: formData
+        description: Sort course by Filter
+        required: true
+        type: string      
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"                                        
+
+  "flippedNewSignup.py/assess":
+    post:
+      tags:
+      - Candidate
+      summary: Candidate Assesment dashboard
+      description: Candidate Job preference update
+      operationId: candidatejobPref
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: formData
+        description: "updateCVSkillset"
+        required: true
+        type: string
+      - name: userID
+        in: formData
+        description: userID of the the candidate
+        required: true
+        type: string
+      - name: cvSkills
+        in: formData
+        description: cvSkills is comma seperated
+        required: true
+        type: string  
+          
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"                                        
+
+  "/flippedNewSignup.py/1":
+    post:
+      tags:
+      - HR
+      summary: HR Login
+      description: Login via email and password
+      operationId: InternalHrLogin
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+
+      parameters:
+      - name: req
+        in: formData
+        description: "loginNow"
+        required: true
+        type: string
+      - name: email
+        in: formData
+        description: email of the Recruiter
+        required: true
+        type: string
+      - name: password
+        in: formData
+        description: password of the candidate
+        required: true
+        type: string
+          
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"
+        '400':
+          description: password incorrect
+          schema:
+            "$ref": "#/definitions/candidateLogin400" 
+  "/flippedLogin.py/login":
+    post:
+      tags:
+      - Recruiter
+      summary: Recruiter login
+      description: login via email and password
+      operationId: RecruiterLogin
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+
+      parameters:
+      - name: req
+        in: formData
+        description: "loginNow"
+        required: true
+        type: string
+      - name: email
+        in: formData
+        description: email of the Recruiter
+        required: true
+        type: string
+      - name: password
+        in: formData
+        description: password of the candidate
+        required: true
+        type: string
+          
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"
+        '400':
+          description: password incorrect
+          schema:
+            "$ref": "#/definitions/candidateLogin400" 
+
+  "/flippedlogin.py/recruiterSignUp":
+    post:
+      tags:
+      - Recruiter
+      summary: Recruiter SignUp
+      description: Recruiter SignUp
+      operationId: RecruiterSignUp
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: formData
+        description: "sendOTP"
+        required: true
+        type: string
+      - name: name
+        in: formData
+        description: first + Last name of Recruiter
+        required: true
+        type: string
+      - name: email
+        in: formData
+        description: email of the Recruiter
+        required: true
+        type: string   
+      - name: password
+        in: formData
+        description: password of the Recruiter
+        required: true
+        type: string         
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"
+        '400':
+          description: password incorrect
+          schema:
+            "$ref": "#/definitions/candidateLogin400"
+
+  "/flippedlogin.py/companyregis":
+    post:
+      tags:
+      - Recruiter
+      summary: Company registraion 
+      description: Company registraion 
+      operationId: companyRegistraion 
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: formData
+        description: "companyregis"
+        required: true
+        type: string
+      - name: compname                                                        
+        in: formData
+        description: Company Name
+        required: true
+        type: string
+      - name: userID
+        in: formData
+        description: userID of the Recruiter
+        required: true
+        type: string   
+      - name: name
+        in: formData
+        description: name of the Recruiter
+        required: true
+        type: string 
+      - name: email
+        in: formData
+        description: email of the Recruiter
+        required: true
+        type: string 
+      - name: designation
+        in: formData
+        description: designation of the Recruiter
+        required: true
+        type: string
+      - name: contact
+        in: formData
+        description: contact number of the Recruiter
+        required: true
+        type: string 
+      - name: industry
+        in: formData
+        description: company belongs to which type of industry
+        required: true
+        type: string
+      - name: url
+        in: formData
+        description: website of the organisation
+        required: true
+        type: string
+      - name: about
+        in: formData
+        description: about organisation
+        required: true
+        type: string
+      - name: loc
+        in: formData
+        description: location of the organisation
+        required: true
+        type: string 
+      - name: orgSize
+        in: formData
+        description: size of the organisation
+        required: true
+        type: string
+      - name: submission
+        in: formData
+        description: logo of the organisation
+        required: true
+        type: string               
+
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"
+        '400':
+          description: password incorrect
+          schema:
+            "$ref": "#/definitions/candidateLogin400"          
+
+  "/flippedLogin.py/jobpost":
+    post:
+      tags:
+      - Recruiter
+      summary: jobPost
+      description: Job post
+      operationId: jobPosts
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: formData
+        description: "jdadd"
+        required: true
+        type: string
+      - name: userID
+        in: formData
+        description: request.session['userID']
+        required: true
+        type: string 
+      - name: name
+        in: formData
+        description: jobRole
+        required: true
+        type: string 
+      - name: designation
+        in: formData
+        description: jobDescription
+        required: true
+        type: string 
+      - name: nop
+        in: formData
+        description: jobNop
+        required: true
+        type: string 
+      - name: ctc
+        in: formData
+        description: minsal
+        required: true
+        type: string 
+      - name: maxCTC
+        in: formData
+        description: maxsal
+        required: true
+        type: string 
+      - name: ctcRange
+        in: formData
+        description: jobSalaryTime
+        required: true
+        type: string 
+      - name: loc
+        in: formData
+        description: jobLoc
+        required: true
+        type: string
+      - name: approved
+        in: formData
+        description: approved
+        required: true
+        type: string 
+      - name: kick
+        in: formData
+        description: jobKick
+        required: true
+        type: string 
+      - name: jobType
+        in: formData
+        description: jobType
+        required: true
+        type: string 
+      - name: jobFilter
+        in: formData
+        description: jobFilter[:-1]
+        required: true
+        type: string
+      - name: experience
+        in: formData
+        description: exp
+        required: true
+        type: string 
+      - name: skillSet
+        in: formData
+        description: skillSet
+        required: true
+        type: string 
+      - name: addskills
+        in: formData
+        description: addmandatoryskills
+        required: true
+        type: string 
+      - name: bucket_skills
+        in: formData
+        description: jobfiltersubtype
+        required: true
+        type: string                              
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"
+        '400':
+          description: password incorrect
+          schema:
+            "$ref": "#/definitions/candidateLogin400"
+            
+  "/flippedAssessmentV3.py/quiz":
+    post:
+      tags:
+      - Recruiter
+      summary: manual Assessment
+      description: manual Assessment
+      operationId: ui/uxQuiz
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: formData
+        description: "updateUI/UXass"
+        required: true
+        type: string
+      - name: skillID
+        in: formData
+        description: SSKID024
+        required: true
+        type: string
+      - name: testName
+        in: formData
+        description: File based Submission
+        required: true
+        type: string
+      - name: jobID
+        in: formData
+        description: jobID
+        required: true
+        type: string
+      - name: content
+        in: formData
+        description: ExtraAssessmentinput
+        required: true
+        type: string
+      - name: isassess == on
+        in: formData
+        description: assessment is assigned
+        required: true
+        type: string
+      - name: isassess == ''
+        in: formData
+        description: assessment is empty
+        required: true
+        type: string    
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"
+        '400':
+          description: password incorrect
+          schema:
+            "$ref": "#/definitions/candidateLogin400"
+
+  "/flippedNotif.py/notif":
+    post:
+      tags:
+      - Recruiter
+      summary: Notification 
+      description: Notification  
+      operationId: companyNotification 
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: formData
+        description: "addNotif"
+        required: true
+        type: string
+      - name: userID                                                        
+        in: formData
+        description: userID
+        required: true
+        type: string
+      - name: type
+        in: formData
+        description: type0
+        required: true
+        type: string   
+      - name: text
+        in: formData
+        description: Your Job has been successfully posted!
+        required: true
+        type: string 
+      - name: redirect
+        in: formData
+        description: /flipped/companyjoblist/
+        required: true
+        type: string 
+      - name: avatar
+        in: formData
+        description: ssdd
+        required: true
+        type: string              
+
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"
+        '400':
+          description: password incorrect
+          schema:
+            "$ref": "#/definitions/candidateLogin400" 
+
+  "/flippedNotif.py/email":
+    post:
+      tags:
+      - Recruiter
+      summary: Company email Sending
+      description: Company email Sending
+      operationId: companyemailsending
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: formData
+        description: "addEmail"
+        required: true
+        type: string
+      - name: templateID                                                        
+        in: formData
+        description: template 11
+        required: true
+        type: string
+      - name: text
+        in: formData
+        description: { "to": "'+ request.session['email'] +'", "name": "'+ request.session['name'] +'"}
+        required: true
+        type: string   
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"
+        '400':
+          description: password incorrect
+          schema:
+            "$ref": "#/definitions/candidateLogin400"
+
+  "/flippedNewSignup.py/sampleQuest":
+    post:
+      tags:
+      - Recruiter
+      summary: Sample Questions
+      description: Sample Questions 
+      operationId: sampleQuest 
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: formData
+        description: "demoQuestions"
+        required: true
+        type: string
+      - name: skillIDs                                                        
+        in: formData
+        description: skill
+        required: true
+        type: string
+
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"
+        '400':
+          description: password incorrect
+          schema:
+            "$ref": "#/definitions/candidateLogin400"
+            
+  "/flippedLogin.py/updateProfile":
+    post:
+      tags:
+      - Recruiter
+      summary: Company registraion 
+      description: Company registraion 
+      operationId: companyRegistraion 
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: formData
+        description: "companyregis"
+        required: true
+        type: string
+      - name: compname                                                        
+        in: formData
+        description: org-name
+        required: true
+        type: string
+      - name: userID                                                        
+        in: formData
+        description: userID
+        required: true
+        type: string
+      - name: name                                                        
+        in: formData
+        description: f-name
+        required: true
+        type: string
+      - name: email                                                        
+        in: formData
+        description: email
+        required: true
+        type: string
+      - name: designation                                                        
+        in: formData
+        description: designation
+        required: true
+        type: string
+      - name: contact                                                        
+        in: formData
+        description: contact number
+        required: true
+        type: string
+      - name: industry                                                        
+        in: formData
+        description: type of industry
+        required: true
+        type: string
+      - name: loc                                                       
+        in: formData
+        description: job location
+        required: true
+        type: string
+      - name: url                                                        
+        in: formData
+        description: company url
+        required: true
+        type: string
+      - name: about                                                        
+        in: formData
+        description: company description
+        required: true
+        type: string
+      - name: url                                                        
+        in: formData
+        description: company url
+        required: true
+        type: string
+      - name: orgSize                                                        
+        in: formData
+        description: organization Size
+        required: true
+        type: string
+      - name: submission                                                        
+        in: formData
+        description: company profile image
+        required: true
+        type: string                
+         
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"
+        '400':
+          description: password incorrect
+          schema:
+            "$ref": "#/definitions/candidateLogin400"
+
+  "/flippedRecruiter.py/deleteAccount":
+    post:
+      tags:
+      - Recruiter
+      summary: Company registraion 
+      description: Company registraion 
+      operationId: companyRegistraion 
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: formData
+        description: "delRecruiterAccount"
+        required: true
+        type: string
+      - name: userID                                                        
+        in: formData
+        description: userID
+        required: true
+        type: string
+
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"
+        '400':
+          description: password incorrect
+          schema:
+            "$ref": "#/definitions/candidateLogin400"
+
+
+
+  "/flippedRecruiter.py/closeJob":
+    post:
+      tags:
+      - Recruiter
+      summary: Company registraion 
+      description: Company registraion 
+      operationId: companyRegistraion 
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: formData
+        description: "closeJobID"
+        required: true
+        type: string
+      - name: jobID                                                        
+        in: formData
+        description: jobID
+        required: true
+        type: string
+
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"
+        '400':
+          description: password incorrect
+          schema:
+            "$ref": "#/definitions/candidateLogin400" 
+
+  "/flippedLogin.py/jdlist":
+    post:
+      tags:
+      - Recruiter
+      summary: Company registraion 
+      description: Company registraion 
+      operationId: companyRegistraion 
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: formData
+        description: "jdlist"
+        required: true
+        type: string
+      - name: userID                                                        
+        in: formData
+        description: userID
+        required: true
+        type: string
+
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"
+        '400':
+          description: password incorrect
+          schema:
+            "$ref": "#/definitions/candidateLogin400"
+
+
+  "/flippedLogin.py/companyregisCheck":
+    post:
+      tags:
+      - Recruiter
+      summary: Company registraion check 
+      description: Company registraion check 
+      operationId: companyRegistraionCheck
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: formData
+        description: "compregischeck"
+        required: true
+        type: string
+      - name: userID                                                        
+        in: formData
+        description: userID
+        required: true
+        type: string
+
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"
+        '400':
+          description: password incorrect
+          schema:
+            "$ref": "#/definitions/candidateLogin400"
+
+  "/flippedRecruiter.py/dashboardNotif":
+    post:
+      tags:
+      - Recruiter
+      summary: Custom Notification
+      description: Custom Notification check 
+      operationId: customnotificationCheck
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: formData
+        description: "dynamicNotif"
+        required: true
+        type: string
+      - name: userID                                                        
+        in: formData
+        description: userID
+        required: true
+        type: string
+
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"
+        '400':
+          description: password incorrect
+          schema:
+            "$ref": "#/definitions/candidateLogin400"
+
+  "/flippedLogin.py/lastActive":
+    post:
+      tags:
+      - Recruiter
+      summary: Recuiter last active
+      description: Recuiter last active
+      operationId: Recuiterlastactive
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: formData
+        description: "updateLastActivity"
+        required: true
+        type: string
+      - name: userID                                                        
+        in: formData
+        description: userID
+        required: true
+        type: string
+
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"
+        '400':
+          description: password incorrect
+          schema:
+            "$ref": "#/definitions/candidateLogin400"
+
+  "/flippedRDashboard.py/candidateStats":
+    post:
+      tags:
+      - Recruiter
+      summary: stats of candidate status
+      description: stats of candidate status 
+      operationId: statsofcandidatestatus
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: formData
+        description: "getDashDetails"
+        required: true
+        type: string
+      - name: userID                                                        
+        in: formData
+        description: userID
+        required: true
+        type: string
+
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"
+        '400':
+          description: password incorrect
+          schema:
+            "$ref": "#/definitions/candidateLogin400" 
+
+
+  "/flippedRecruiter.py/getCandidateDashboard":
+    post:
+      tags:
+      - Recruiter
+      summary: get candidate dashboard
+      description: Candidate Dashboard
+      operationId: candidateDashboard
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: formData
+        description: "getCandidateDashboard"
+        required: true
+        type: string
+      - name: userID                                                        
+        in: formData
+        description: userID
+        required: true
+        type: string
+
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"
+        '400':
+          description: password incorrect
+          schema:
+            "$ref": "#/definitions/candidateLogin400"                             
+
+
+  "/flippedRecruiter.py/calendarbyDate":
+    post:
+      tags:
+      - Recruiter
+      summary: Calendar by date
+      description: Calendar by date 
+      operationId: Calendarbydate
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: formData
+        description: "recruitersCalaenderByDate"
+        required: true
+        type: string
+      - name: userID                                                        
+        in: formData
+        description: userID
+        required: true
+        type: string
+      - name: date                                                        
+        in: formData
+        description: date
+        required: true
+        type: string  
+
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"
+        '400':
+          description: password incorrect
+          schema:
+            "$ref": "#/definitions/candidateLogin400"
+
+  "/flippedRecruiter.py/customNotif":
+    post:
+      tags:
+      - Recruiter
+      summary: Dashboard Notification
+      description: Dashboard Notification check 
+      operationId: DashboardNotificationCheck
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: formData
+        description: "dashboardNotification"
+        required: true
+        type: string
+      - name: userID                                                        
+        in: formData
+        description: userID
+        required: true
+        type: string
+
+      responses:
+        '200':
+          description: password correct
+          schema:
+            "$ref": "#/definitions/candidateLogin200"
+        '400':
+          description: password incorrect
+          schema:
+            "$ref": "#/definitions/candidateLogin400"                                                       
   
   "/pet":
     post:
