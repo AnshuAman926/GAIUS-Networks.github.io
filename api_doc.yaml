@@ -895,9 +895,9 @@ paths:
     post:
       tags:
       - Recruiter
-      summary: Company registraion 
-      description: Company registraion 
-      operationId: companyRegistraion 
+      summary: Company update profile
+      description: Company update profile 
+      operationId: Companyupdateprofile 
       consumes:
       - multipart/form-data
       produces:
@@ -988,9 +988,9 @@ paths:
     post:
       tags:
       - Recruiter
-      summary: Company registraion 
-      description: Company registraion 
-      operationId: companyRegistraion 
+      summary: delete Account 
+      description: delete Account 
+      operationId: deleteAccount 
       consumes:
       - multipart/form-data
       produces:
@@ -1023,9 +1023,9 @@ paths:
     post:
       tags:
       - Recruiter
-      summary: Company registraion 
-      description: Company registraion 
-      operationId: companyRegistraion 
+      summary: Close Job 
+      description: Close Job 
+      operationId: companyJob
       consumes:
       - multipart/form-data
       produces:
@@ -1056,9 +1056,9 @@ paths:
     post:
       tags:
       - Recruiter
-      summary: Company registraion 
-      description: Company registraion 
-      operationId: companyRegistraion 
+      summary: CompanyJdList 
+      description: Company JD list 
+      operationId: CompanyJdList 
       consumes:
       - multipart/form-data
       produces:
